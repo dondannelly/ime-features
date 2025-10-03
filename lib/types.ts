@@ -1,4 +1,123 @@
-// Article-related types (replacing feature types)
+// Feature-related types (for company feature pages)
+export interface Feature {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  heroImage?: string;
+  story: {
+    title: string;
+    content: string;
+    highlights?: string[];
+  };
+  storyImage?: string;
+  products: Product[];
+  cta: CTA;
+  resources: Resource[];
+  // New interactive components
+  interactiveDemo?: InteractiveDemo;
+  pricing?: PricingSection;
+  testimonials?: Testimonial[];
+  features?: FeatureItem[];
+  integrations?: Integration[];
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  price?: string;
+  features?: string[];
+  popular?: boolean;
+  cta?: {
+    text: string;
+    href: string;
+  };
+}
+
+export interface CTA {
+  title: string;
+  description: string;
+  primaryButton: {
+    text: string;
+    href: string;
+  };
+  secondaryButton?: {
+    text: string;
+    href: string;
+  };
+}
+
+export interface Resource {
+  title: string;
+  description: string;
+  type: 'document' | 'video' | 'link';
+  url: string;
+  icon?: string;
+}
+
+// New interactive components for feature pages
+export interface InteractiveDemo {
+  title: string;
+  description: string;
+  type: 'calculator' | 'simulator' | 'configurator' | 'preview';
+  component: string; // Component name to render
+  data?: any; // Component-specific data
+}
+
+export interface PricingSection {
+  title: string;
+  description: string;
+  plans: PricingPlan[];
+  features: string[];
+}
+
+export interface PricingPlan {
+  id: string;
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  popular?: boolean;
+  cta: {
+    text: string;
+    href: string;
+  };
+}
+
+export interface Testimonial {
+  id: string;
+  content: string;
+  author: {
+    name: string;
+    title: string;
+    company: string;
+    avatar?: string;
+  };
+  rating?: number;
+}
+
+export interface FeatureItem {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+  image?: string;
+  benefits: string[];
+}
+
+export interface Integration {
+  id: string;
+  name: string;
+  description: string;
+  logo: string;
+  category: string;
+  status: 'available' | 'coming-soon' | 'beta';
+}
+
+// Article-related types (for blog content)
 export interface Article {
   id: string;
   slug: string;
@@ -24,54 +143,6 @@ export interface Article {
     keywords?: string[];
   };
   relatedArticles?: string[]; // Array of article slugs
-}
-
-// Legacy feature types (keeping for backward compatibility)
-export interface Feature {
-  id: string;
-  slug: string;
-  title: string;
-  subtitle: string;
-  heroImage?: string;
-  story: {
-    title: string;
-    content: string;
-    highlights?: string[];
-  };
-  storyImage?: string;
-  products: Product[];
-  cta: CTA;
-  resources: Resource[];
-}
-
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  price?: string;
-  features?: string[];
-}
-
-export interface CTA {
-  title: string;
-  description: string;
-  primaryButton: {
-    text: string;
-    href: string;
-  };
-  secondaryButton?: {
-    text: string;
-    href: string;
-  };
-}
-
-export interface Resource {
-  title: string;
-  description: string;
-  type: 'document' | 'video' | 'link';
-  url: string;
-  icon?: string;
 }
 
 // Salesforce-related types
