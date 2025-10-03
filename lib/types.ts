@@ -63,7 +63,7 @@ export interface InteractiveDemo {
   description: string;
   type: 'calculator' | 'simulator' | 'configurator' | 'preview';
   component: string; // Component name to render
-  data?: any; // Component-specific data
+  data?: Record<string, unknown>; // Component-specific data
 }
 
 export interface PricingSection {

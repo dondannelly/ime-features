@@ -88,7 +88,7 @@ export function InteractiveDemo({ demo }: InteractiveDemoProps) {
 }
 
 // Demo Components
-function AutomationBuilderDemo({ data }: { data: any }) {
+function AutomationBuilderDemo({ data }: { data: Record<string, unknown> }) {
   const [selectedTemplate, setSelectedTemplate] = useState('');
   const [selectedIntegration, setSelectedIntegration] = useState('');
 
@@ -152,7 +152,7 @@ function AutomationBuilderDemo({ data }: { data: any }) {
   );
 }
 
-function AnalyticsDashboardDemo({ data }: { data: any }) {
+function AnalyticsDashboardDemo({ data }: { data: Record<string, unknown> }) {
   const [selectedMetric, setSelectedMetric] = useState('revenue');
 
   const metrics = [

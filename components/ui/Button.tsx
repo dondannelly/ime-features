@@ -36,7 +36,7 @@ export const Button = forwardRef<
   const classes = `${baseClasses} ${variantClasses} ${sizeClasses} ${className}`;
 
   if (href) {
-    const { href: _, ...linkProps } = props as LinkButtonProps;
+    const { href, ...linkProps } = props as LinkButtonProps;
     return (
       <Link
         href={href}

@@ -25,7 +25,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             What Our Customers Say
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what real customers have to say about our platform.
+            Don&apos;t just take our word for it. Here&apos;s what real customers have to say about our platform.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                   </div>
                 )}
                 <blockquote className="text-gray-700 italic">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
               </div>
               

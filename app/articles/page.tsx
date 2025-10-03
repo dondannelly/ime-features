@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import { getAllArticles, getFeaturedArticles } from '../../data/articles';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';

@@ -91,7 +91,7 @@ export function IntegrationsSection({ integrations }: IntegrationsSectionProps) 
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">
-            Don't see your favorite tool? We're always adding new integrations.
+            Don&apos;t see your favorite tool? We&apos;re always adding new integrations.
           </p>
           <button className="text-blue-600 hover:text-blue-700 font-medium">
             Request an Integration →
