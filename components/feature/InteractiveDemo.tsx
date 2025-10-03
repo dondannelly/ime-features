@@ -20,9 +20,9 @@ export function InteractiveDemo({ demo }: InteractiveDemoProps) {
   const renderDemoComponent = () => {
     switch (demo.component) {
       case 'AutomationBuilder':
-        return <AutomationBuilderDemo data={demo.data} />;
+        return <AutomationBuilderDemo data={demo.data || {}} />;
       case 'AnalyticsDashboard':
-        return <AnalyticsDashboardDemo data={demo.data} />;
+        return <AnalyticsDashboardDemo data={demo.data || {}} />;
       default:
         return <DefaultDemo type={demo.type} />;
     }
