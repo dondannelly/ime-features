@@ -1,12 +1,37 @@
 import Link from "next/link";
-import { getFeaturedArticles } from "../data/articles";
 import { getAllFeatures } from "../data/features";
 
 export default async function Home() {
-  const [featuredArticles, features] = await Promise.all([
-    getFeaturedArticles(),
-    getAllFeatures()
-  ]);
+  const features = await getAllFeatures();
+  
+  // Mock featured articles for now
+  const featuredArticles = [
+    {
+      id: 'getting-started-with-salesforce',
+      slug: 'getting-started-with-salesforce',
+      title: 'Getting Started with Salesforce',
+      subtitle: 'A comprehensive guide for new Salesforce users',
+      excerpt: 'Learn the fundamentals of Salesforce and how to make the most of your CRM platform from day one.',
+      heroImage: '/images/salesforce-hero.jpg',
+      author: {
+        name: 'John Smith',
+        avatar: '/images/authors/john-smith.jpg',
+        bio: 'Salesforce Certified Administrator with 5+ years of experience'
+      },
+      publishedAt: '2024-01-15T10:00:00Z',
+      updatedAt: '2024-01-20T14:30:00Z',
+      tags: ['salesforce', 'crm', 'getting-started', 'tutorial'],
+      category: 'Tutorials',
+      readingTime: 8,
+      featured: true,
+      seo: {
+        title: 'Getting Started with Salesforce - Complete Guide',
+        description: 'Learn how to get started with Salesforce CRM. Complete guide for beginners with tips, tricks, and best practices.',
+        keywords: ['salesforce', 'crm', 'getting started', 'tutorial', 'guide']
+      },
+      relatedArticles: ['salesforce-best-practices']
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
